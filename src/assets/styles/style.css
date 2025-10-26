@@ -1,0 +1,208 @@
+/* ========== General Design ========== */
+:root {
+  --bg-light: #FEFEFE;
+  --bg-dark: #A39F94;
+  --text-dark: #57564F;
+  --text-light: #EDECEC;
+  --accent1: #E0E7D7;
+  --accent2: #B7C396;
+  --accent3: #70803F;
+  --accent4: #4B5D3A;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+h2 {
+  font-family: "Megrim", system-ui;
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-family: "Megrim", system-ui;
+  color: var(--accent2);
+}
+
+a {
+  color: var(--text-dark);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent2);
+  color: var(--text-dark);
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--text-dark);
+  color: var(--accent2);
+  color: white;
+}
+
+.lilotus-footer {
+  height: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  font-family: "Megrim", system-ui;
+}
+
+.lilotus-logo-name {
+  height: 3rem;
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Megrim", system-ui;
+}
+
+/* ========== Navbar ========== */
+nav {
+  background-color: var(--accent1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container img {
+  height: 4rem;
+}
+
+.nav-title {
+  font-family: "Megrim", system-ui;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 3rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent3);
+}
+
+.active-link {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: var(--accent1);
+  padding: 1rem;
+  line-height: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* ========== Layout Sections ========== */
+section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  line-height: 1.6rem;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-info {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.intro {
+  position: relative;
+  height: 35rem;
+  overflow: hidden;
+}
+
+.intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-content {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(163, 159, 148, 0.8);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-content p {
+  max-width: 600px;
+  font-size: 1.2rem;
+}
+
+.team-member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.team-member img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-desc {
+  max-width: 500px;
+}
+
+.massage-info {
+  margin-top: 3rem;
+}
+
+.price-group {
+  font-style: italic;
+  color: var(--accent3);
+}
+
+.map-container {
+  margin-top: 3rem;
+}
