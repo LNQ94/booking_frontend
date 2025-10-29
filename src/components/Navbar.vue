@@ -11,38 +11,20 @@
       </button>
 
       <transition name="slide">
-        <ul v-if="isOpen" class="nav-links-mobile">
-          <li>
-            <router-link to="/" exact-active-class="active-link" @click="closeMenu"
-              >Start</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/about" exact-active-class="active-link" @click="closeMenu"
-              >Über uns</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/pricing" exact-active-class="active-link" @click="closeMenu"
-              >Unsere Angebote</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/booking" exact-active-class="active-link" @click="closeMenu"
-              >Buchen</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/contact" exact-active-class="active-link" @click="closeMenu"
-              >Kontakt</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/login" exact-active-class="active-link" @click="closeMenu"
-              >Login</router-link
-            >
-          </li>
-        </ul>
+        <div v-if="isOpen" class="nav-links-mobile">
+          <button class="close-btn" @click="closeMenu" aria-label="Menü schließen">
+            ✕
+          </button>
+
+          <ul>
+            <li><router-link to="/" @click="closeMenu" exact-active-class="active-link">Start</router-link></li>
+            <li><router-link to="/about" @click="closeMenu" exact-active-class="active-link">Über uns</router-link></li>
+            <li><router-link to="/pricing" @click="closeMenu" exact-active-class="active-link">Unsere Angebote</router-link></li>
+            <li><router-link to="/booking" @click="closeMenu" exact-active-class="active-link">Buchen</router-link></li>
+            <li><router-link to="/contact" @click="closeMenu" exact-active-class="active-link">Kontakt</router-link></li>
+            <li><router-link to="/login" @click="closeMenu" exact-active-class="active-link">Login</router-link></li>
+          </ul>
+        </div>
       </transition>
 
       <ul class="nav-links">
@@ -133,7 +115,6 @@ nav {
   padding-bottom: 0.1rem;
 }
 
-/* ===== Burger Button ===== */
 .burger {
   display: none;
   flex-direction: column;
@@ -164,7 +145,6 @@ nav {
   transform: translateY(-0.5rem) rotate(-45deg);
 }
 
-/* ===== Mobile Menu ===== */
 @media (max-width: 900px) {
   .burger {
     display: flex;
@@ -202,8 +182,15 @@ nav {
     transition: color 0.2s ease;
   }
 
-  .nav-links-mobile a:hover {
-    color: var(--accent4);
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--accent1);
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   /* Slide-in Animation */
