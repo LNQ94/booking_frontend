@@ -85,4 +85,30 @@
 .member-desc {
   max-width: 500px;
 }
+
+@media (max-width: 900px) {
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .team-member img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .member-desc {
+    max-width: 90%;
+  }
+
+  .member-desc h3 {
+    margin-top: 0.5rem;
+  }
+
+  .member-desc p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+}
 </style>
