@@ -71,3 +71,13 @@
     </div>
   </section>
 </template>
+<style scoped>
+.massage-info {
+  margin-top: 3rem;
+}
+
+.price-group {
+  font-style: italic;
+  color: var(--accent3);
+}
+</style>
