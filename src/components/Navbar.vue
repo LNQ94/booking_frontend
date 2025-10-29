@@ -12,17 +12,39 @@
 
       <transition name="slide">
         <div v-if="isOpen" class="nav-links-mobile">
-          <button class="close-btn" @click="closeMenu" aria-label="Menü schließen">
-            ✕
-          </button>
+          <button class="close-btn" @click="closeMenu" aria-label="Menü schließen">✕</button>
 
           <ul>
-            <li><router-link to="/" @click="closeMenu" exact-active-class="active-link">Start</router-link></li>
-            <li><router-link to="/about" @click="closeMenu" exact-active-class="active-link">Über uns</router-link></li>
-            <li><router-link to="/pricing" @click="closeMenu" exact-active-class="active-link">Unsere Angebote</router-link></li>
-            <li><router-link to="/booking" @click="closeMenu" exact-active-class="active-link">Buchen</router-link></li>
-            <li><router-link to="/contact" @click="closeMenu" exact-active-class="active-link">Kontakt</router-link></li>
-            <li><router-link to="/login" @click="closeMenu" exact-active-class="active-link">Login</router-link></li>
+            <li>
+              <router-link to="/" @click="closeMenu" exact-active-class="active-link"
+                >Start</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/about" @click="closeMenu" exact-active-class="active-link"
+                >Über uns</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/pricing" @click="closeMenu" exact-active-class="active-link"
+                >Unsere Angebote</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/booking" @click="closeMenu" exact-active-class="active-link"
+                >Buchen</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/contact" @click="closeMenu" exact-active-class="active-link"
+                >Kontakt</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/login" @click="closeMenu" exact-active-class="active-link"
+                >Login</router-link
+              >
+            </li>
           </ul>
         </div>
       </transition>
@@ -168,6 +190,7 @@ nav {
     padding: 5rem 2rem;
     gap: 1.5rem;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    line-height: 3rem;
   }
 
   .nav-links-mobile li {
