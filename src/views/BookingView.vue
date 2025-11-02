@@ -2,12 +2,28 @@
   <section class="section-info">
     <h2>Buchung</h2>
     <p>
-      Buchen Sie Ihre Thai-Massage ganz einfach online!<br />Wählen Sie Ihre gewünschte Massage, die
-      Dauer und den Termin.
+      Rufen Sie uns an oder buchen Sie Ihre Thai-Massage ganz einfach online!<br />Wählen Sie Ihre
+      gewünschte Massage, die Dauer und den Termin.
     </p>
   </section>
 
-  <section>
+  <section v-if="!auth.user">
+    <component :is="showLogin ? LoginForm : SignupForm" />
+
+    <p style="margin-top: 1rem; text-align: center">
+      <span v-if="showLogin">
+        Noch kein Konto? Dann
+        <a class="signin-link" @click.prevent="toggleForm">hier registrieren</a>.
+      </span>
+      <span v-else>
+        Schon ein Konto? Dann
+        <a class="signin-link" @click.prevent="toggleForm">hier einloggen</a>.
+      </span>
+    </p>
+  </section>
+
+  <section v-else>
+    <h3>Massage buchen</h3>
     <form>
       <div>
         <label for="massage-type">Massageart:</label>
@@ -22,6 +38,7 @@
         <label for="duration">Dauer:</label>
         <select id="duration" name="duration">
           <option value="30">30 Minuten</option>
+          <option value="45">45 Minuten</option>
           <option value="60">60 Minuten</option>
           <option value="90">90 Minuten</option>
         </select>
@@ -29,12 +46,12 @@
 
       <div>
         <label for="appointment-date">Datum:</label>
-        <input type="date" id="appointment-date" name="appointment-date" />
+        <input type="date" id="appointment-date" name="appointment-date" required />
       </div>
 
       <div>
         <label for="appointment-time">Uhrzeit:</label>
-        <input type="time" id="appointment-time" name="appointment-time" />
+        <input type="time" id="appointment-time" name="appointment-time" required />
       </div>
 
       <div>
@@ -43,11 +60,39 @@
       </div>
 
       <div>
-        <label for="customer-contact">Kontakt (Telefon/E-Mail):</label>
-        <input type="text" id="customer-contact" name="customer-contact" />
+        <label for="customer-email">E-Mail:</label>
+        <input type="text" id="customer-email" name="customer-email" required />
       </div>
 
-      <button type="submit">Buchung abschicken</button>
+      <div>
+        <label for="customer-phone">Telefonnummer:</label>
+        <input type="text" id="customer-phone" name="customer-phone" />
+      </div>
+
+      <button class="btn" type="submit">Massage buchen</button>
     </form>
   </section>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import auth from '@/stores/auth'
+import LoginForm from '@/components/LoginForm.vue'
+import SignupForm from '@/components/SignupForm.vue'
+
+const showLogin = ref(true)
+function toggleForm() {
+  showLogin.value = !showLogin.value
+}
+</script>
+
+<style>
+.signin-link {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
+.signin-link:hover {
+  cursor: pointer;
+}
+</style>

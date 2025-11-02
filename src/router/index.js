@@ -5,7 +5,6 @@ import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
 import PricingView from '../views/PricingView.vue'
 import BookingView from '../views/BookingView.vue'
-import LoginView from '../views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,7 +14,6 @@ const router = createRouter({
     { path: '/pricing', name: 'pricing', component: PricingView },
     { path: '/booking', name: 'booking', component: BookingView },
     { path: '/contact', name: 'contact', component: ContactView },
-    { path: '/login', name: 'login', component: LoginView },
     { path: '/:pathMatch(.*)*', redirect: '/' }
   ]
 })

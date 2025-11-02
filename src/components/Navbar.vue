@@ -22,7 +22,6 @@
             <li><router-link to="/pricing" @click="closeMenu" exact-active-class="active-link">Unsere Angebote</router-link></li>
             <li><router-link to="/booking" @click="closeMenu" exact-active-class="active-link">Buchen</router-link></li>
             <li><router-link to="/contact" @click="closeMenu" exact-active-class="active-link">Kontakt</router-link></li>
-            <li><router-link to="/login" @click="closeMenu" exact-active-class="active-link">Login</router-link></li>
           </ul>
         </div>
       </transition>
@@ -33,7 +32,6 @@
         <li><router-link to="/pricing" exact-active-class="active-link">Angebote</router-link></li>
         <li><router-link to="/booking" exact-active-class="active-link">Buchen</router-link></li>
         <li><router-link to="/contact" exact-active-class="active-link">Kontakt</router-link></li>
-        <li><router-link to="/login" exact-active-class="active-link">Login</router-link></li>
       </ul>
     </div>
   </nav>
