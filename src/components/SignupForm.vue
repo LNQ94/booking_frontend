@@ -15,21 +15,19 @@
       <input type="phone" id="phone" v-model="input.phone" />
     </div>
 
-  <div class="form-row password-row">
-    <label for="password">Passwort<span class="required-symbol">⁎</span></label>
-    <input type="password" id="password" v-model="input.password" required />
+    <div class="form-row password-row">
+      <label for="password">Passwort<span class="required-symbol">⁎</span></label>
+      <input type="password" id="password" v-model="input.password" required />
 
-    <span class="info-icon" tabindex="0">
-      ℹ
-      <span class="tooltip">
-        Passwort muss enthalten:
-        <br />• mindestens 12 Zeichen
-        <br />• Groß- & Kleinbuchstaben
-        <br />• mindestens 1 Zahl
-        <br />• mindestens 1 Sonderzeichen (!, ?, $, %, etc.)
+      <span class="info-icon" tabindex="0">
+        ℹ
+        <span class="tooltip">
+          Passwort muss enthalten:
+          <br />• mindestens 12 Zeichen <br />• Groß- & Kleinbuchstaben <br />• mindestens 1 Zahl
+          <br />• mindestens 1 Sonderzeichen (!, ?, $, %, etc.)
+        </span>
       </span>
-    </span>
-  </div>
+    </div>
 
     <div class="form-row">
       <label for="passwordConfirm"
@@ -116,7 +114,7 @@ function signup() {
 
 .info-icon {
   position: absolute;
-  right: 7rem;
+  left: 28rem;
   font-size: 1.4rem;
   cursor: pointer;
   color: var(--accent4);
@@ -136,7 +134,9 @@ function signup() {
   text-align: left;
   visibility: hidden;
   transform: translateY(-5px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   z-index: 10;
 }
 
@@ -146,5 +146,4 @@ function signup() {
   visibility: visible;
   transform: translateY(0);
 }
-
 </style>
