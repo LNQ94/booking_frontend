@@ -114,7 +114,7 @@ function signup() {
 
 .info-icon {
   position: absolute;
-  left: 28rem;
+  left: 24rem;
   font-size: 1.4rem;
   cursor: pointer;
   color: var(--accent4);
