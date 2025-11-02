@@ -17,8 +17,6 @@
 
     <div class="form-row password-row">
       <label for="password">Passwort<span class="required-symbol">⁎</span></label>
-      <input type="password" id="password" v-model="input.password" required />
-
       <span class="info-icon" tabindex="0">
         ℹ
         <span class="tooltip">
@@ -27,6 +25,7 @@
           <br />• mindestens 1 Sonderzeichen (!, ?, $, %, etc.)
         </span>
       </span>
+      <input type="password" id="password" v-model="input.password" required />
     </div>
 
     <div class="form-row">
@@ -114,16 +113,27 @@ function signup() {
 
 .info-icon {
   position: absolute;
-  left: 24rem;
-  font-size: 1.4rem;
+  left: 4rem;
+  top: 20%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--text-light);
+  background-color: var(--accent4);
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  color: var(--accent4);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .tooltip {
   position: absolute;
   top: 1.5rem;
-  right: 0;
+  left: 20%;
   background: var(--text-dark);
   color: var(--text-light);
   padding: 0.6rem 1rem;
@@ -133,7 +143,6 @@ function signup() {
   line-height: 1.2rem;
   text-align: left;
   visibility: hidden;
-  transform: translateY(-5px);
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
