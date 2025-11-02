@@ -98,9 +98,10 @@ input:focus {
 .form-row {
   width: 100%;
   display: grid;
-  grid-template-columns: 11rem 1fr;
+  grid-template-columns: 7rem 1fr;
   align-items: center;
   gap: 0.5rem;
+  line-height: .7rem;
 }
 
 .form-row label {
